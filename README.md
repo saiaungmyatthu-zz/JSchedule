@@ -29,17 +29,23 @@ shift_grouping: reference table for schedule one-many relationship with shift an
 ![alt text](https://github.com/saiaungmyatthu/JSchedule/blob/master/images/pic1.png)
 
 # How JSchedule application work?
-1. How schedule data upload via application?
-   The application uses Apache POI library to support both xls & xlsx excel upload.
-   User must used the template excel(work_allocation.xlsx) provided in [data] folder.
-   The sample excel data as below.
-   ![alt text](https://github.com/saiaungmyatthu/JSchedule/blob/master/images/sample_data.png)
+1. How schedule data upload to application?</br>
+   The application uses Apache POI library to support both xls & xlsx excel upload.</br>
+   User must use the template excel(work_allocation.xlsx) provided in [data] folder.</br>
+   The sample excel data as below.</br>
+   ![alt text](https://github.com/saiaungmyatthu/JSchedule/blob/master/images/sample_data.png)</br>
    
-   <!-- add screenshot of upload excel -->
+   Following are the screenshot how to upload data to application.</br>
+   ![alt text](https://github.com/saiaungmyatthu/JSchedule/blob/master/images/p2.png)</br>
+   ![alt text](https://github.com/saiaungmyatthu/JSchedule/blob/master/images/p3.png)</br>
+   ![alt text](https://github.com/saiaungmyatthu/JSchedule/blob/master/images/p1.png)</br>
    
-2. How to validate schedule by shift_code and shift_group?
-   To validate schedule by shift_code and shift_group user must provide Shift Code, Shift Group Code and specific day(optional).
-   Upon clicking "Verify " button application will do mandatory field check first then try to fetch the total number of schedule data records in table.
-   If no record then verify fail otherwise success.
-   <!-- add screenshot of verify -->
+2. How to validate schedule by shift_code and shift_group?</br>
+   To validate schedule by shift_code and shift_group user must provide Shift Code, Shift Group Code and specific day(optional).</br>
+   Upon clicking "Verify Schedule" button application will do mandatory field check first then try to fetch the total number of schedule data records in table.</br>
+   If no record then verify fail otherwise success.</br>
+   
+   Following are the screenshot for validation.
+   ![alt text](https://github.com/saiaungmyatthu/JSchedule/blob/master/images/p5.png)</br>
+   ![alt text](https://github.com/saiaungmyatthu/JSchedule/blob/master/images/p4.png)</br>
    
