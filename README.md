@@ -45,7 +45,7 @@ shift_grouping: reference table for schedule one-many relationship with shift an
    Upon clicking "Verify Schedule" button application will do mandatory field check first then try to fetch the total number of schedule data records in table.</br>
    If no record then verify fail otherwise success.</br>
    
-   Following are the screenshot for validation.
+   Following are the screenshot for schedule validation.</br>
    ![alt text](https://github.com/saiaungmyatthu/JSchedule/blob/master/images/p5.png)</br>
-   ![alt text](https://github.com/saiaungmyatthu/JSchedule/blob/master/images/p4.png)</br>
+   ![alt text](https://github.com/saiaungmyatthu/JSchedule/blob/master/images/p4d.png)</br>
    
