@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_241"/>
+	<classpathentry kind="lib" path="C:/jschedule/lib/commons-collections4-4.4.jar"/>
+	<classpathentry kind="lib" path="C:/jschedule/lib/commons-compress-1.18.jar"/>
+	<classpathentry kind="lib" path="C:/jschedule/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/jschedule/lib/mybatis-3.5.5.jar"/>
+	<classpathentry kind="lib" path="C:/jschedule/lib/mysql-connector-java-5.1.49.jar"/>
+	<classpathentry kind="lib" path="C:/jschedule/lib/poi-4.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/jschedule/lib/poi-ooxml-4.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/jschedule/lib/poi-ooxml-schemas-4.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/jschedule/lib/xmlbeans-3.1.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace = "com.sai.jschedule.db.mapper.ScheduleMapper">
+	<resultMap id="shiftTypeResult" type="ShiftType">
+		<result property="id" column="id" />
+		<result property="code" column="code" />
+		<result property="name" column="name" />
+		<result property="duration" column="duration" />
+		<result property="colorCode" column="colorCode" />
+	</resultMap>
+
+	<resultMap id="shiftGroupResult" type="ShiftGroup">
+		<result property="id" column="id" />
+		<result property="code" column="code" />
+		<result property="name" column="name" />
+	</resultMap>
+
+	<resultMap id="scheduleItemResult" type="ScheduleItem">
+		<result property="id" column="id" />
+		<result property="day" column="day" />
+		<result property="shiftCode" column="shift_code" />
+		<result property="shiftGroupCode" column="shift_group_code" />
+		<collection property="typeList" javaType="list" ofType="ShiftType" select="getTypeByCode" column="shift_code" />
+		<collection property="groupList" javaType="list" ofType="ShiftGroup" select="getGroupByCode" column="shift_group_code" />
+	</resultMap>
+
+	<select id="getAllShit" resultMap="shiftTypeResult">
+		SELECT * FROM shift;
+	</select>
+
+	<select id="getAllGroups" resultMap="shiftGroupResult">
+		SELECT * FROM shift_group;
+	</select>
+
+	<select id="getTypeByCode" resultMap="shiftTypeResult" parameterType="string">
+		SELECT * FROM shift WHERE code = #{shift_code};
+	</select>
+
+	<select id="getGroupByCode" resultMap="shiftGroupResult" parameterType="string">
+		SELECT * FROM shift_group WHERE code = #{shift_group_code};
+	</select>
+
+	<select id="getAllSchedules" resultMap="scheduleItemResult">
+		SELECT * FROM shift_grouping;
+	</select>
+
+	<delete id="clearSchedule">
+		TRUNCATE TABLE shift_grouping;
+	</delete>
+
+	<delete id="clearTypes">
+		DELETE FROM shift;
+	</delete>
+
+	<delete id="clearGroups">
+		DELETE FROM shift_group;
+	</delete>
+
+	<select id="doesShiftBelongToGroup" parameterType="ScheduleItem" resultType="Integer">
+		SELECT COUNT(*) FROM jvhome.shift_grouping
+		WHERE shift_code = #{shiftCode} AND shift_group_code = #{shiftGroupCode}
+		<if test="day != null">
+			AND day = #{day}
+		</if>
+	</select>
+
+	<insert id="batchInsertTypes" parameterType="list">
+		INSERT INTO shift VALUES
+			<foreach collection="list" item="itm" index="idx" separator=",">
+				(#{itm.id}, #{itm.code}, #{itm.name}, #{itm.duration}, #{itm.colorCode})
+			</foreach>
+	</insert>
+
+	<insert id="batchInsertGroups" parameterType="list">
+		INSERT INTO shift_group VALUES
+			<foreach collection="list" item="itm" index="idx" separator=",">
+				(#{itm.id}, #{itm.code}, #{itm.name})
+			</foreach>
+	</insert>
+
+	<insert id="batchInsertSchedule" parameterType="list">
+		INSERT INTO shift_grouping(day, shift_group_code, shift_code) VALUES
+			<foreach collection="list" item="itm" index="idx" separator=",">
+				(#{itm.day}, #{itm.shiftGroupCode}, #{itm.shiftCode})
+			</foreach>
+	</insert>
+
+</mapper>

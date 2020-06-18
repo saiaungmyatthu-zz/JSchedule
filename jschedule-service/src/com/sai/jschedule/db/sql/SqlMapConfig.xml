@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases>
+      <typeAlias alias="ShiftType" type="com.sai.jschedule.bean.ShiftType"/>
+      <typeAlias alias="ShiftGroup" type="com.sai.jschedule.bean.ShiftGroup"/>
+      <typeAlias alias="ScheduleItem" type="com.sai.jschedule.bean.ScheduleItem"/>
+      <typeAlias alias="list" type="java.util.List" />
+      <typeAlias alias="string" type="java.lang.String"/>
+   </typeAliases>
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://localhost:3306/jvhome?allowPublicKeyRetrieval=true&amp;useSSL=false" />
+				<property name="username" value="root" />
+				<property name="password" value="password123" />
+				<property name="defaultAutoCommit" value="false"/>
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="com/sai/jschedule/db/sql/schedule.xml" />
+	</mappers>
+
+</configuration>
