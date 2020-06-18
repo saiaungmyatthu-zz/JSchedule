@@ -19,6 +19,7 @@ Used MyBatis OR Mapping for relational database CRUD operation and apache POI fo
 3. Download JSchedule-Service & JSchedule project archives and extract the zip file.
 4. Now cd to exported JSchedule-Service deploy directory (eg. C:\jschedule\jschedule-service\deploy)
 5. Type ant to execute the build script and after successfuly executed the ant build script jschedule-service.jar file will be generated in C:\jschedule\lib folder.
+6. Use Eclipse->export->Java->Runnable Jar option to export the executable jar to launch the application.
 
 
 # Things to do
