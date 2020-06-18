@@ -18,7 +18,8 @@ Used MyBatis OR Mapping for relational database CRUD operation and apache POI fo
 2. Execute sql script from [db] folder.
 3. Download JSchedule-Service & JSchedule project archives and extract the zip file.
 4. Now cd to exported JSchedule-Service deploy directory (eg. C:\jschedule\jschedule-service\deploy)
-5. type ant to execute the build script and after successfuly executed the ant build script jschedule-service.jar file will be generated in C:\jschedule\lib folder.
+5. Type ant to execute the build script and after successfuly executed the ant build script jschedule-service.jar file will be generated in C:\jschedule\lib folder.
+
 
 # Things to do
 Following picture shows the table relationship between shift, shift_group and shift_grouping.</br>
